@@ -15,7 +15,6 @@ public class QnA_Manager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pertanyaan;
     [SerializeField] private Image gambarPertanyaan;
     [SerializeField] private TextMeshProUGUI levelText;
-
     //Untuk merekam sedang melakukan pertanyaan keberapa
     public int indexPertanyaan;
 
@@ -29,6 +28,7 @@ public class QnA_Manager : MonoBehaviour
         public bool[] nilaiBenar;
     }
     [SerializeField] private DataSoal[] dataSoal = new DataSoal[0];
+    [SerializeField] private TimerScript timeScript;
     public void Awake()
     {
         CheckSoal();
@@ -43,6 +43,7 @@ public class QnA_Manager : MonoBehaviour
             Pesan_UI.instance.TutupPesan();
             LoadSoal();
             CheckSoal();
+            timeScript.resetTime();
         }
     }
     public void prevSoal()
@@ -53,6 +54,7 @@ public class QnA_Manager : MonoBehaviour
             Pesan_UI.instance.TutupPesan();
             CheckSoal();
             LoadSoal();
+            timeScript.resetTime();
         }
     }
     public void LoadSoal()
