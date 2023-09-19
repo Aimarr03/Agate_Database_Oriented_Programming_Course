@@ -19,15 +19,7 @@ public class QnA_Manager : MonoBehaviour
     public int indexPertanyaan;
 
     //Untuk membuat struktur data untuk memuat format soal
-    [System.Serializable]
-    private struct DataSoal
-    {
-        public Sprite GambarSoal;
-        public string pertanyaan;
-        public string[] jawaban;
-        public bool[] nilaiBenar;
-    }
-    [SerializeField] private DataSoal[] dataSoal = new DataSoal[0];
+    [SerializeField] private LevelPack dataSoal;
     [SerializeField] private TimerScript timeScript;
     public void Awake()
     {
@@ -37,7 +29,7 @@ public class QnA_Manager : MonoBehaviour
     }
     public void nextSoal()
     {
-        if(indexPertanyaan < dataSoal.Length)
+        if(indexPertanyaan < dataSoal.levelPack.Length)
         {
             indexPertanyaan++;
             Pesan_UI.instance.TutupPesan();
@@ -59,16 +51,16 @@ public class QnA_Manager : MonoBehaviour
     }
     public void LoadSoal()
     {
-        DataSoal dataSoalKini = dataSoal[indexPertanyaan];
+        QuestionData dataSoalKini = dataSoal.GetQuestion(indexPertanyaan);
         SetTextLevel();
         pertanyaan.text = dataSoalKini.pertanyaan;
-        gambarPertanyaan.sprite = dataSoalKini.GambarSoal;
+        gambarPertanyaan.sprite = dataSoalKini.gambarSoal;
         int indexPilihan = 0;
         foreach (Transform child in answerContainer)
         {
             child.TryGetComponent<UI_Pertanyaan>(out UI_Pertanyaan pilihanKini);
-
-            pilihanKini.SetNilai(dataSoalKini.jawaban[indexPilihan], dataSoalKini.nilaiBenar[indexPilihan]);
+            QuestionData.AnswerData dataJawabanKini = dataSoalKini.jawabanSoal[indexPilihan];
+            pilihanKini.SetNilai(dataJawabanKini.jawaban,dataJawabanKini.nilaiBenar);
             indexPilihan++;
         }
     }
@@ -86,7 +78,7 @@ public class QnA_Manager : MonoBehaviour
         {
             Pesan_UI.instance.prevButton.gameObject.SetActive(false);
         }
-        if(indexPertanyaan < dataSoal.Length-1)
+        if(indexPertanyaan < dataSoal.levelPack.Length-1)
         {
             Pesan_UI.instance.nextButton.gameObject.SetActive(true);
         }
