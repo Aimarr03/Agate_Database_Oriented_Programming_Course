@@ -20,12 +20,15 @@ public class QnA_Manager : MonoBehaviour
 
     //Untuk membuat struktur data untuk memuat format soal
     [SerializeField] private LevelPack dataSoal;
+    [SerializeField] private ProgressLevel playerProgress;
     [SerializeField] private TimerScript timeScript;
+
     public void Awake()
     {
         CheckSoal();
         indexPertanyaan = 0;
         LoadSoal();
+        playerProgress.SimpanProgress();
     }
     public void nextSoal()
     {
