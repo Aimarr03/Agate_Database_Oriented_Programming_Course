@@ -5,23 +5,29 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
-    [SerializeField] private float timeRemaining = 30f;
-    [SerializeField] private float currentTime;
-    [SerializeField] private Slider timeUI;
-    [SerializeField] private float smoothnes = .5f;
+    [SerializeField] private float _timeRemaining;
+    [SerializeField] private float _currentTime;
+    [SerializeField] private readonly Slider _timeUI;
+    [SerializeField] private float _smoothnes;
+
+    public void Awake()
+    {
+        _timeRemaining = 30f;
+        _smoothnes = .5f;
+    }
     private void Start()
     {
-        currentTime = timeRemaining;
+        _currentTime = _timeRemaining;
     }
     private void Update()
     {
-        if(currentTime> 0)
+        if (_currentTime > 0 && !Pesan_UI.instance.sudahJawab)
         {
-            currentTime -= Time.deltaTime;
+            _currentTime -= Time.deltaTime;
             float normalizedTimer = calculateTimeNormalized();
-            timeUI.value = Mathf.Lerp(timeUI.value, normalizedTimer, Time.deltaTime * smoothnes);
+            _timeUI.value = Mathf.Lerp(_timeUI.value, normalizedTimer, Time.deltaTime * _smoothnes);
         }
-        else
+        else if (_currentTime <= 0)
         {
             string pesan = "Waktu Habis, anda tidak menjawab apa pun!";
             Pesan_UI.instance.TampilPesan(pesan);
@@ -30,10 +36,11 @@ public class TimerScript : MonoBehaviour
     }
     private float calculateTimeNormalized()
     {
-        return currentTime/ timeRemaining;
+        return _currentTime / _timeRemaining;
     }
     public void resetTime()
     {
-        currentTime = timeRemaining;
+        _currentTime = _timeRemaining;
+        _timeUI.value = calculateTimeNormalized();
     }
 }

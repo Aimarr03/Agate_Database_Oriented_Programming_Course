@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: C-1
   m_EditorClassIdentifier: 
   pertanyaan: Fakultas yang mempelajari Komputer
-  gambarSoal: {fileID: 0}
+  gambarSoal: {fileID: 21300000, guid: 9963f4d3e16180540bd60c66f2eccc7f, type: 3}
   jawabanSoal:
   - jawaban: Fakultas Ilmu Komputer
-    nilaiBenar: 0
+    nilaiBenar: 1
   - jawaban: Fakultas Teknik
     nilaiBenar: 0
   - jawaban: Fakultas Matematika dan IPA

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A-3
   m_EditorClassIdentifier: 
   pertanyaan: Warna dari Daun
-  gambarSoal: {fileID: 0}
+  gambarSoal: {fileID: 21300000, guid: 914cb41c72f3d504f9e1f3e75bb247b0, type: 3}
   jawabanSoal:
   - jawaban: Merah
     nilaiBenar: 0

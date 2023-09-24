@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: D-1
   m_EditorClassIdentifier: 
   pertanyaan: Hewan apa di bawah ini?
-  gambarSoal: {fileID: 0}
+  gambarSoal: {fileID: 21300000, guid: effd4dd126eec1741b76415b1634170d, type: 3}
   jawabanSoal:
   - jawaban: Ayam
     nilaiBenar: 0

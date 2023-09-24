@@ -291,9 +291,9 @@ RectTransform:
   - {fileID: 305045086}
   m_Father: {fileID: 1776149282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 270, y: -30}
   m_SizeDelta: {x: 240, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54071700
@@ -499,9 +499,9 @@ RectTransform:
   - {fileID: 401587241}
   m_Father: {fileID: 1776149282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 810, y: -30}
   m_SizeDelta: {x: 240, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &200412646
@@ -920,8 +920,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pesan_Panel: {fileID: 350354100}
   text_Pesan: {fileID: 1918586581}
+  PilihanJawaban: {fileID: 603787693}
   prevButton: {fileID: 54071700}
   nextButton: {fileID: 200412646}
+  sudahJawab: 0
 --- !u!114 &350354102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1792,9 +1794,9 @@ RectTransform:
   - {fileID: 676175504}
   m_Father: {fileID: 603787693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -155}
   m_SizeDelta: {x: 540, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883981643
@@ -2009,6 +2011,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1057297393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057297395}
+  - component: {fileID: 1057297394}
+  m_Layer: 0
+  m_Name: Testing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1057297394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057297393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a0e535b6304d94ca1c7352f2390a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1057297395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057297393}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.47610885, y: 0.5537148, z: 0.29296646}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1241844089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,9 +2090,9 @@ RectTransform:
   - {fileID: 847001665}
   m_Father: {fileID: 603787693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -270}
   m_SizeDelta: {x: 540, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1241844091
@@ -2341,7 +2387,7 @@ GameObject:
   - component: {fileID: 1585383629}
   - component: {fileID: 1585383628}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Clock_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2379,14 +2425,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7299694, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3089561e7e5b06f4585d9a0cad46d9be, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2507,9 +2553,9 @@ RectTransform:
   - {fileID: 328082563}
   m_Father: {fileID: 603787693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -385}
   m_SizeDelta: {x: 540, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650448346
@@ -2718,9 +2764,9 @@ RectTransform:
   - {fileID: 1989890529}
   m_Father: {fileID: 603787693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 540, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796602205
@@ -3128,53 +3174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea475a1596e9aa142bda8499761915c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answerContainer: {fileID: 603787693}
-  answerTemplate: {fileID: 1796602204}
-  pertanyaan: {fileID: 1373630448}
-  gambarPertanyaan: {fileID: 2112337381}
-  levelText: {fileID: 36612229}
+  _gambarPertanyaan: {fileID: 0}
+  _levelText: {fileID: 0}
   indexPertanyaan: 0
-  dataSoal:
-  - GambarSoal: {fileID: 21300000, guid: 2b58c44abb47e4d4c83530ca5e940ae5, type: 3}
-    pertanyaan: Warna dari Mawar?
-    jawaban:
-    - Merah
-    - Biru
-    - Kuning
-    - Hijau
-    nilaiBenar: 01000000
-  - GambarSoal: {fileID: 21300000, guid: d0443ee71d86b0b47bcd5f2304ff1caa, type: 3}
-    pertanyaan: Warna dari Langit
-    jawaban:
-    - Merah
-    - Biru
-    - Kuning
-    - Hijau
-    nilaiBenar: 00010000
-  - GambarSoal: {fileID: 21300000, guid: 12004e5f7411787458230499e86d76d8, type: 3}
-    pertanyaan: Warna dari Daun?
-    jawaban:
-    - Merah
-    - Biru
-    - Kuning
-    - Hijau
-    nilaiBenar: 00000001
-  - GambarSoal: {fileID: 21300000, guid: ce790f7713928de48b0857cca386fd87, type: 3}
-    pertanyaan: Warna dari Matahari?
-    jawaban:
-    - Merah
-    - Biru
-    - Kuning
-    - Hijau
-    nilaiBenar: 00000100
-  - GambarSoal: {fileID: 21300000, guid: 1b2f2608e3753c347ae63b6a35387e11, type: 3}
-    pertanyaan: Warna dari Laut?
-    jawaban:
-    - Merah
-    - Biru
-    - Kuning
-    - Hijau
-    nilaiBenar: 00010000
+  dataSoal: {fileID: 11400000, guid: 92f5e93f18629de43853c88771ae6f74, type: 2}
+  playerProgress: {fileID: 11400000, guid: b9f83849b0fefd248ab1058d821023ad, type: 2}
   timeScript: {fileID: 2065763514}
 --- !u!4 &2065763513
 Transform:
@@ -3203,10 +3207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6dbc1d770ba5c4f96e33152616bbdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 30
-  currentTime: 0
-  timeUI: {fileID: 600459041}
-  smoothnes: 0.5
+  _timeRemaining: 0
+  _currentTime: 0
+  _smoothnes: 0
 --- !u!1 &2097052872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3365,3 +3368,4 @@ SceneRoots:
   - {fileID: 1056152247}
   - {fileID: 1615145347}
   - {fileID: 2065763513}
+  - {fileID: 1057297395}

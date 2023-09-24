@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: B-4
   m_EditorClassIdentifier: 
   pertanyaan: Nama Negara apa dari bendera ini
-  gambarSoal: {fileID: 0}
+  gambarSoal: {fileID: 21300000, guid: c82be0e1eddff6e4ba81aa05ca47eeb5, type: 3}
   jawabanSoal:
   - jawaban: Indonesia
     nilaiBenar: 0

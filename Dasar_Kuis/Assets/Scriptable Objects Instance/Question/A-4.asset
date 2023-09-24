@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A-4
   m_EditorClassIdentifier: 
   pertanyaan: Warna dari Matahari
-  gambarSoal: {fileID: 0}
+  gambarSoal: {fileID: 21300000, guid: 7411dfeade0c01a468dd6074ab4d4398, type: 3}
   jawabanSoal:
   - jawaban: Merah
     nilaiBenar: 0

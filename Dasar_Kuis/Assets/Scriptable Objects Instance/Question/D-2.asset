@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: D-2
   m_EditorClassIdentifier: 
   pertanyaan: Hewan apa di bawah ini?
-  gambarSoal: {fileID: 0}
+  gambarSoal: {fileID: 21300000, guid: 91915e18d1ab5ee44840cfc912a0829d, type: 3}
   jawabanSoal:
-  - jawaban: Ayam
+  - jawaban: Babi
     nilaiBenar: 0
-  - jawaban: Bebek
+  - jawaban: Anjing
+    nilaiBenar: 1
+  - jawaban: Monyet
     nilaiBenar: 0
-  - jawaban: Angsa
-    nilaiBenar: 0
-  - jawaban: Elang
+  - jawaban: Sapi
     nilaiBenar: 0

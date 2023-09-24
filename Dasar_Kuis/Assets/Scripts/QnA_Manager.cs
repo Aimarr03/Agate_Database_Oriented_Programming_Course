@@ -8,13 +8,13 @@ using System;
 public class QnA_Manager : MonoBehaviour
 {
     //Referensi untuk Bagian Jawaban dan pilihannya
-    [SerializeField] private Transform answerContainer;
-    [SerializeField] private Transform answerTemplate;
+    [SerializeField] private readonly Transform _answerContainer;
+    //[SerializeField] private Transform answerTemplate;
 
     //Referensi untuk bagian pertanyaan yang meliputi gambar dan teks pertanyaan
-    [SerializeField] private TextMeshProUGUI pertanyaan;
-    [SerializeField] private Image gambarPertanyaan;
-    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private readonly TextMeshProUGUI _pertanyaan;
+    [SerializeField] private Image _gambarPertanyaan;
+    [SerializeField] private TextMeshProUGUI _levelText;
     //Untuk merekam sedang melakukan pertanyaan keberapa
     public int indexPertanyaan;
 
@@ -28,7 +28,10 @@ public class QnA_Manager : MonoBehaviour
         CheckSoal();
         indexPertanyaan = 0;
         LoadSoal();
-        playerProgress.SimpanProgress();
+        if (!playerProgress.MuatProgress())
+        {
+            playerProgress.SimpanProgress();
+        }
     }
     public void nextSoal()
     {
@@ -56,10 +59,10 @@ public class QnA_Manager : MonoBehaviour
     {
         QuestionData dataSoalKini = dataSoal.GetQuestion(indexPertanyaan);
         SetTextLevel();
-        pertanyaan.text = dataSoalKini.pertanyaan;
-        gambarPertanyaan.sprite = dataSoalKini.gambarSoal;
+        _pertanyaan.text = dataSoalKini.pertanyaan;
+        _gambarPertanyaan.sprite = dataSoalKini.gambarSoal;
         int indexPilihan = 0;
-        foreach (Transform child in answerContainer)
+        foreach (Transform child in _answerContainer)
         {
             child.TryGetComponent<UI_Pertanyaan>(out UI_Pertanyaan pilihanKini);
             QuestionData.AnswerData dataJawabanKini = dataSoalKini.jawabanSoal[indexPilihan];
@@ -69,7 +72,7 @@ public class QnA_Manager : MonoBehaviour
     }
     public void SetTextLevel()
     {
-        levelText.text = "Level " + (indexPertanyaan + 1);
+        _levelText.text = "Level " + (indexPertanyaan + 1);
     }
     public void CheckSoal()
     {

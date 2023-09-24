@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C-4
   m_EditorClassIdentifier: 
   pertanyaan: Universitas apa di bawah ini?
-  gambarSoal: {fileID: 0}
+  gambarSoal: {fileID: 21300000, guid: bccc9baf272b5a048a216a88ca263640, type: 3}
   jawabanSoal:
   - jawaban: Universitas Brawijaya
     nilaiBenar: 0

@@ -14,16 +14,16 @@ public class ProgressLevel : ScriptableObject
         public Dictionary<string, int> levelPackProgress;
     }
     public DataProgress dataProgress = new DataProgress();
+    private string fileName = "contoh.txt";
 
     public void SimpanProgress()
     {
-        string fileName = "contoh.txt";
         string directory = Application.dataPath + "/Temporary/";
         string path = directory + fileName;
 
         dataProgress.koin = 200;
 
-        if(dataProgress.levelPackProgress == null) dataProgress.levelPackProgress = new Dictionary<string, int>();
+        if (dataProgress.levelPackProgress == null) dataProgress.levelPackProgress = new Dictionary<string, int>();
 
         dataProgress.levelPackProgress.Add("A", 3);
         dataProgress.levelPackProgress.Add("B", 1);
@@ -61,8 +61,26 @@ public class ProgressLevel : ScriptableObject
 
         Debug.Log("Data berhasil dimasukkan ke dalam " + path);
     }
-    public void MuatProgress()
+    public bool MuatProgress()
     {
+        string directory = Application.dataPath + "/Temporary/";
+        string path = directory + fileName;
 
+        var FileStream = File.Open(path, FileMode.Open);
+        try
+        {
+            var formatter = new BinaryFormatter();
+            dataProgress = (DataProgress)formatter.Deserialize(FileStream);
+
+            FileStream.Dispose();
+            Debug.Log($"{dataProgress.koin};{dataProgress.levelPackProgress.Count}");
+            return true;
+        }
+        catch(System.Exception e)
+        {
+            Debug.Log($"ERROR: Terjadi kesalahan saat memuat progress : {e.Message}");
+            FileStream.Dispose();
+            return false;
+        }
     }
 }
