@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,8 +14,16 @@ public class Pesan_UI : MonoBehaviour
     [SerializeField] private Transform pesan_Panel;
     [SerializeField] private TextMeshProUGUI text_Pesan;
     [SerializeField] private Transform PilihanJawaban;
+
+    [SerializeField] private Transform TombolSalah;
+    [SerializeField] private Transform TombolBenar;
+
+    [SerializeField] private ProgressLevel progressLevel;
+
+    public Button TombolMainMenu;
     public Button prevButton;
     public Button nextButton;
+
     private string Pesan_Text;
     private Color salah;
     private Color benar;
@@ -22,11 +31,39 @@ public class Pesan_UI : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        UI_Pertanyaan.AnswerChosen += UI_Pertanyaan_AnswerChosen;
+        TimerScript.TimeOver += TimerScript_TimeOver;
+
         sudahJawab = false;
         gameObject.SetActive(false);
         PilihanJawaban.gameObject.SetActive(true);
         benar = new(115, 255, 115);
         salah = new(255, 0, 0);
+    }
+
+    private void UI_Pertanyaan_AnswerChosen(UI_Pertanyaan.DataDikirim _DataTerkirim)
+    {
+        TampilPesan(_DataTerkirim.pesan);
+        CheckKebenaran(_DataTerkirim.jawabanBenar);
+        if (!_DataTerkirim._QuestionDataReference._DijawabBenar)
+        {
+            progressLevel.dataProgress.koin += 10;
+            _DataTerkirim._QuestionDataReference._DijawabBenar = true;
+        }
+    }
+
+    private void TimerScript_TimeOver(string pesan)
+    {
+        TampilPesan(pesan);
+        TombolSalah.gameObject.SetActive(true);
+        Salah();
+    }
+
+    private void OnDestroy()
+    {
+        UI_Pertanyaan.AnswerChosen -= UI_Pertanyaan_AnswerChosen;
+        TimerScript.TimeOver -= TimerScript_TimeOver;
     }
     public void TampilPesan(string pesan)
     {
@@ -41,6 +78,21 @@ public class Pesan_UI : MonoBehaviour
         sudahJawab = false;
         PilihanJawaban.gameObject.SetActive(true);
         gameObject.SetActive(false);
+    }
+    public void CheckKebenaran(bool kebenaranNilai)
+    {
+        if (kebenaranNilai)
+        {
+            Benar();
+            TombolBenar.gameObject.SetActive(true);
+            TombolSalah.gameObject.SetActive(false);
+        }
+        else
+        {
+            Salah();
+            TombolBenar.gameObject.SetActive(false);
+            TombolSalah.gameObject.SetActive(true);
+        }
     }
     public void Salah()
     {

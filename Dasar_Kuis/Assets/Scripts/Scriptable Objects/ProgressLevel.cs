@@ -21,7 +21,7 @@ public class ProgressLevel : ScriptableObject
         string directory = Application.dataPath + "/Temporary/";
         string path = directory + fileName;
 
-        dataProgress.koin = 200;
+        dataProgress.koin = 0;
 
         if (dataProgress.levelPackProgress == null) dataProgress.levelPackProgress = new Dictionary<string, int>();
 

@@ -63,13 +63,14 @@ public class QnA_Manager : MonoBehaviour
         SetTextLevel();
         _pertanyaan.text = dataSoalKini.pertanyaan;
         _gambarPertanyaan.sprite = dataSoalKini.gambarSoal;
-        int indexPilihan = 0;
+        int indexOpsi = 0;
         foreach (Transform child in _answerContainer)
         {
             child.TryGetComponent<UI_Pertanyaan>(out UI_Pertanyaan pilihanKini);
-            QuestionData.AnswerData dataJawabanKini = dataSoalKini.jawabanSoal[indexPilihan];
-            pilihanKini.SetNilai(dataJawabanKini.jawaban,dataJawabanKini.nilaiBenar);
-            indexPilihan++;
+            QuestionData.AnswerData jawabanKini = dataSoalKini.jawabanSoal[indexOpsi];
+            pilihanKini.SetNilai(jawabanKini.jawaban, jawabanKini.nilaiBenar);
+            pilihanKini.SetJawaban(dataSoalKini);
+            indexOpsi++;
         }
     }
     public void SetTextLevel()
@@ -89,10 +90,12 @@ public class QnA_Manager : MonoBehaviour
         if(indexPertanyaan < dataSoal.levelPack.Length-1)
         {
             Pesan_UI.instance.nextButton.gameObject.SetActive(true);
+            Pesan_UI.instance.TombolMainMenu.gameObject.SetActive(false);
         }
         else
         {
             Pesan_UI.instance.nextButton.gameObject.SetActive(false);
+            Pesan_UI.instance.TombolMainMenu.gameObject.SetActive(true);
         }
     }
 }

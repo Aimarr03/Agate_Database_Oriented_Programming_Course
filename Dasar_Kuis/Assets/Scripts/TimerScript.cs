@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
+    public static event System.Action<string> TimeOver;
     [SerializeField] private float _timeRemaining;
     [SerializeField] private float _currentTime;
     [SerializeField] private Slider _timeUI;
@@ -30,8 +31,9 @@ public class TimerScript : MonoBehaviour
         else if (_currentTime <= 0)
         {
             string pesan = "Waktu Habis, anda tidak menjawab apa pun!";
-            Pesan_UI.instance.TampilPesan(pesan);
-            Pesan_UI.instance.Salah();
+            TimeOver?.Invoke(pesan);
+            //Pesan_UI.instance.TampilPesan(pesan);
+            //Pesan_UI.instance.Salah();
         }
     }
     private float calculateTimeNormalized()

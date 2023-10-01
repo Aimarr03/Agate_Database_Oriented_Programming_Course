@@ -6,29 +6,50 @@ using TMPro;
 
 public class UI_Pertanyaan : MonoBehaviour
 {
-    private string jawaban;
+    public static event System.Action<DataDikirim> AnswerChosen;
+    private string _jawaban;
     [SerializeField] private TextMeshProUGUI kontenJawaban;
-    private bool nilaiBenar;
+    private QuestionData _CurrentQuestionData;
+    private bool _nilaiBenar;
+    
+    public class DataDikirim
+    {
+        public string pesan;
+        public bool jawabanBenar;
+        public QuestionData _QuestionDataReference;
+    }
     public void TekanTombol()
     {
-        string nilaiJawaban = nilaiBenar ? "benar" : "salah";
-        string pesan = "Jawaban Anda adalah " + jawaban + " \njawaban ini " + nilaiJawaban; 
-        Pesan_UI.instance.TampilPesan(pesan);
-        if(nilaiBenar)
+        string nilaiJawaban = _nilaiBenar ? "benar" : "salah";
+        string pesan = "Jawaban Anda adalah " + _jawaban + " \njawaban ini " + nilaiJawaban;
+        AnswerChosen?.Invoke(new DataDikirim
         {
-            Pesan_UI.instance.Benar();
-            Debug.Log("Jawaban Benar!");
-        }
-        else
-        {
-            Pesan_UI.instance.Salah();
-            Debug.Log("Jawaban Salah!");
-        }
+            pesan = pesan,
+            jawabanBenar = _nilaiBenar,
+            _QuestionDataReference = _CurrentQuestionData
+        });
+        /*
+            Pesan_UI.instance.TampilPesan(pesan);
+            if(nilaiBenar)
+            {
+                Pesan_UI.instance.Benar();
+                Debug.Log("Jawaban Benar!");
+            }
+            else
+            {
+                Pesan_UI.instance.Salah();
+                Debug.Log("Jawaban Salah!");
+            }
+        */
     }
-    public void SetNilai(string jawaban, bool nilaiBenar)
+    public void SetNilai(string jawaban, bool opsiBenar)
     {
-        this.jawaban = jawaban;
-        this.kontenJawaban.text = jawaban;
-        this.nilaiBenar = nilaiBenar;
+        _jawaban = jawaban;
+        kontenJawaban.text = jawaban;
+        _nilaiBenar = opsiBenar;
+    }
+    public void SetJawaban(QuestionData questionData)
+    {
+        _CurrentQuestionData = questionData;
     }
 }

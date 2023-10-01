@@ -15,6 +15,7 @@ public class QuestionData : ScriptableObject
     public string pertanyaan = string.Empty;
     public Sprite gambarSoal = null;
     public string namaSoal;
+    public bool _DijawabBenar;
     [Header("Jawaban-Jawaban Soal")]
     public AnswerData[] jawabanSoal = new AnswerData[0];
 }
