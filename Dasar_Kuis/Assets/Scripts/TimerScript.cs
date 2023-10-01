@@ -7,7 +7,7 @@ public class TimerScript : MonoBehaviour
 {
     [SerializeField] private float _timeRemaining;
     [SerializeField] private float _currentTime;
-    [SerializeField] private readonly Slider _timeUI;
+    [SerializeField] private Slider _timeUI;
     [SerializeField] private float _smoothnes;
 
     public void Awake()

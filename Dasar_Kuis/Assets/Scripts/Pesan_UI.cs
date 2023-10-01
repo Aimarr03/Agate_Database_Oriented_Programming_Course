@@ -21,8 +21,8 @@ public class Pesan_UI : MonoBehaviour
     public bool sudahJawab = false;
     private void Awake()
     {
-        sudahJawab = false;
         instance = this;
+        sudahJawab = false;
         gameObject.SetActive(false);
         PilihanJawaban.gameObject.SetActive(true);
         benar = new(115, 255, 115);

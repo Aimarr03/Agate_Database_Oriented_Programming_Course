@@ -8,11 +8,11 @@ using System;
 public class QnA_Manager : MonoBehaviour
 {
     //Referensi untuk Bagian Jawaban dan pilihannya
-    [SerializeField] private readonly Transform _answerContainer;
+    [SerializeField] private Transform _answerContainer;
     //[SerializeField] private Transform answerTemplate;
 
     //Referensi untuk bagian pertanyaan yang meliputi gambar dan teks pertanyaan
-    [SerializeField] private readonly TextMeshProUGUI _pertanyaan;
+    [SerializeField] private TextMeshProUGUI _pertanyaan;
     [SerializeField] private Image _gambarPertanyaan;
     [SerializeField] private TextMeshProUGUI _levelText;
     //Untuk merekam sedang melakukan pertanyaan keberapa

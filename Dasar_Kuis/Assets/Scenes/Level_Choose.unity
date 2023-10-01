@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7909975bad72844383d3a0c0c368ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Headline: {fileID: 0}
+  Headline: {fileID: 602375464}
   _LevelContainer: {fileID: 1777382923}
   _LevelUIFormat: {fileID: 1955534972}
   _LevelPackContainer: {fileID: 209600394}
@@ -2039,6 +2039,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4632383574373390967}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184034642977268171, guid: 87913271379329f4795329a001a0466a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2116,7 +2148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1620458173473883580, guid: 874f40710fd9f554caa439d54592d210, type: 3}
       propertyPath: m_Name
-      value: GameSceneManagetr
+      value: GameSceneManage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
