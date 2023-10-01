@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Level_Pack_UI : MonoBehaviour
 {
+    public static event System.Action<LevelPack> OnClick;
     private LevelPack _levelPack;
     [SerializeField] private TextMeshProUGUI _ButtonText;
     public void _SetLevelPack(LevelPack currentLevelPack)
@@ -17,5 +18,9 @@ public class Level_Pack_UI : MonoBehaviour
     public LevelPack GetLevelPack()
     {
         return _levelPack;
+    }
+    public void LevelPackUI_OnClick()
+    {
+        OnClick?.Invoke(_levelPack);
     }
 }

@@ -7,6 +7,7 @@ using System;
 
 public class QnA_Manager : MonoBehaviour
 {
+    [SerializeField] private InitialGameplayData gameplayData;
     //Referensi untuk Bagian Jawaban dan pilihannya
     [SerializeField] private Transform _answerContainer;
     //[SerializeField] private Transform answerTemplate;
@@ -25,8 +26,9 @@ public class QnA_Manager : MonoBehaviour
 
     public void Awake()
     {
+        dataSoal = gameplayData.levelPack;
+        indexPertanyaan = gameplayData.IndexLevel;
         CheckSoal();
-        indexPertanyaan = 0;
         LoadSoal();
         if (!playerProgress.MuatProgress())
         {

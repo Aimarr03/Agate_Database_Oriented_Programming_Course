@@ -16,7 +16,7 @@ public class LevelPackManager : MonoBehaviour
         {
             if(child != _LevelPackButtonFormat)
             {
-                GameObject.Destroy(child);
+                Destroy(child);
             }
         }
         foreach(LevelPack levelPack in _ListLevelPack)
