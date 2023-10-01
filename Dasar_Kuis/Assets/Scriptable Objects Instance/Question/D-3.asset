@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pertanyaan: Hewan apa di bawah ini?
   gambarSoal: {fileID: 21300000, guid: d9e63057c93fb7e4786c7838649940c1, type: 3}
+  namaSoal: D-3
   jawabanSoal:
   - jawaban: Macan Tutul
     nilaiBenar: 1
