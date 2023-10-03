@@ -21,7 +21,7 @@ public class QnA_Manager : MonoBehaviour
 
     //Untuk membuat struktur data untuk memuat format soal
     [SerializeField] private LevelPack dataSoal;
-    [SerializeField] private ProgressLevel playerProgress;
+    //[SerializeField] private ProgressLevel playerProgress;
     [SerializeField] private TimerScript timeScript;
 
     public void Awake()
@@ -30,10 +30,6 @@ public class QnA_Manager : MonoBehaviour
         indexPertanyaan = gameplayData.IndexLevel;
         CheckSoal();
         LoadSoal();
-        if (!playerProgress.MuatProgress())
-        {
-            playerProgress.SimpanProgress();
-        }
     }
     public void nextSoal()
     {

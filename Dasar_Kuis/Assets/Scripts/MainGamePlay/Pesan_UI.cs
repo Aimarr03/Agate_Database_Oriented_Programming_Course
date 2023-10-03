@@ -18,7 +18,7 @@ public class Pesan_UI : MonoBehaviour
     [SerializeField] private Transform TombolSalah;
     [SerializeField] private Transform TombolBenar;
 
-    [SerializeField] private ProgressLevel progressLevel;
+    //[SerializeField] private ProgressLevel progressLevel;
 
     public Button TombolMainMenu;
     public Button prevButton;
@@ -48,7 +48,7 @@ public class Pesan_UI : MonoBehaviour
         CheckKebenaran(_DataTerkirim.jawabanBenar);
         if (!_DataTerkirim._QuestionDataReference._DijawabBenar)
         {
-            progressLevel.dataProgress.koin += 10;
+            //progressLevel.dataProgress.koin += 10;
             _DataTerkirim._QuestionDataReference._DijawabBenar = true;
         }
     }

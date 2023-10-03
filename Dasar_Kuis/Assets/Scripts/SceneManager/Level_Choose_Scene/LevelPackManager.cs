@@ -9,12 +9,11 @@ public class LevelPackManager : MonoBehaviour
     [SerializeField] private Transform _LevelPackContainer;
     [SerializeField] private Transform _LevelPackButtonFormat;
 
-    [SerializeField] private TextMeshProUGUI currentCoin;
-    [SerializeField] private ProgressLevel progressLevel;
+    //[SerializeField] private ProgressLevel progressLevel;
     private string _HeadLineText;
     public void Awake()
     {
-        currentCoin.text = ""+progressLevel.dataProgress.koin;
+        //currentCoin.text = ""+progressLevel.dataProgress.koin;
         _LevelPackButtonFormat.gameObject.SetActive(false);
         foreach(Transform child in _LevelPackContainer)
         {
