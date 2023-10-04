@@ -7,6 +7,8 @@ public class LevelPack : ScriptableObject
 {
     public string _LevelPackName;
     public QuestionData[] levelPack = new QuestionData[0];
+    public bool terkunci;
+    public int harga;
 
     public QuestionData GetQuestion(int index)
     {

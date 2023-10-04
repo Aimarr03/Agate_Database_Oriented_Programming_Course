@@ -19,3 +19,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eebee1af49545ee4399c1b0a34d780a9, type: 2}
   - {fileID: 11400000, guid: 2d5df86b3309c6443ab6a798951435f1, type: 2}
   - {fileID: 11400000, guid: 959e3e37a2757264da2368948e66f4de, type: 2}
+  terkunci: 1
+  harga: 50

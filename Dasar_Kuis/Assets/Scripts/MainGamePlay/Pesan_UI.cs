@@ -18,7 +18,8 @@ public class Pesan_UI : MonoBehaviour
     [SerializeField] private Transform TombolSalah;
     [SerializeField] private Transform TombolBenar;
 
-    //[SerializeField] private ProgressLevel progressLevel;
+    [SerializeField] private BinaryProgressLevelManager progressLevelManager;
+    [SerializeField] private ProgressLevel PlayerProgressLevel;
 
     public Button TombolMainMenu;
     public Button prevButton;
@@ -41,6 +42,10 @@ public class Pesan_UI : MonoBehaviour
         benar = new(115, 255, 115);
         salah = new(255, 0, 0);
     }
+    private void Start()
+    {
+        PlayerProgressLevel = progressLevelManager.GetPlayerProgressLevel();
+    }
 
     private void UI_Pertanyaan_AnswerChosen(UI_Pertanyaan.DataDikirim _DataTerkirim)
     {
@@ -48,7 +53,8 @@ public class Pesan_UI : MonoBehaviour
         CheckKebenaran(_DataTerkirim.jawabanBenar);
         if (!_DataTerkirim._QuestionDataReference._DijawabBenar)
         {
-            //progressLevel.dataProgress.koin += 10;
+            PlayerProgressLevel.koin += 10;
+            progressLevelManager.Save(PlayerProgressLevel);
             _DataTerkirim._QuestionDataReference._DijawabBenar = true;
         }
     }

@@ -15,6 +15,7 @@ MonoBehaviour:
   pertanyaan: Warna dari Laut
   gambarSoal: {fileID: 21300000, guid: d52cf11ee29f977468a8edb29985eab2, type: 3}
   namaSoal: A-5
+  _DijawabBenar: 0
   jawabanSoal:
   - jawaban: Merah
     nilaiBenar: 0

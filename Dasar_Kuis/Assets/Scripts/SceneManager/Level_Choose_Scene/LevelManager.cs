@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
 
     public void Awake()
     {
-        Level_Pack_UI.OnClick += Level_Pack_UI_OnClick;
+        Level_Pack_UI.OnClickTerbuka += Level_Pack_UI_OnClick;
         _HeadLineText_Level = "Pilih Level yang tersedia!";
         _HeadLineText_LevelPack = "Pilih level pack yang tersedia!";
         Headline.text = _HeadLineText_LevelPack;
@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
     }
     public void OnDestroy()
     {
-        Level_Pack_UI.OnClick -= Level_Pack_UI_OnClick;
+        Level_Pack_UI.OnClickTerbuka -= Level_Pack_UI_OnClick;
     }
     private void Level_Pack_UI_OnClick(LevelPack currentLevelPack)
     {

@@ -257,6 +257,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36864}
   m_CullTransparentMesh: 1
+--- !u!1 &58581702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58581704}
+  - component: {fileID: 58581703}
+  m_Layer: 0
+  m_Name: ProgressManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &58581703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58581702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac6d112e7e0feb419258eac128f47b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &58581704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58581702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &96974955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,50 +1954,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &1057297393
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1057297395}
-  - component: {fileID: 1057297394}
-  m_Layer: 0
-  m_Name: Testing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1057297394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057297393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a0e535b6304d94ca1c7352f2390a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1057297395
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057297393}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47610885, y: 0.5537148, z: 0.29296646}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066630431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,7 +2426,9 @@ MonoBehaviour:
   PilihanJawaban: {fileID: 964559553}
   TombolSalah: {fileID: 1764488317}
   TombolBenar: {fileID: 1378694597}
-  progressLevel: {fileID: 11400000, guid: b9f83849b0fefd248ab1058d821023ad, type: 2}
+  progressLevelManager: {fileID: 58581703}
+  PlayerProgressLevel:
+    koin: 0
   TombolMainMenu: {fileID: 476108050}
   prevButton: {fileID: 1275521948}
   nextButton: {fileID: 1221243327}
@@ -3996,7 +3998,6 @@ MonoBehaviour:
   _levelText: {fileID: 1066630433}
   indexPertanyaan: 0
   dataSoal: {fileID: 11400000, guid: 92f5e93f18629de43853c88771ae6f74, type: 2}
-  playerProgress: {fileID: 11400000, guid: b9f83849b0fefd248ab1058d821023ad, type: 2}
   timeScript: {fileID: 2065763514}
 --- !u!4 &2065763513
 Transform:
@@ -4414,5 +4415,5 @@ SceneRoots:
   - {fileID: 1401153839}
   - {fileID: 1615145347}
   - {fileID: 2065763513}
-  - {fileID: 1057297395}
   - {fileID: 1287050299}
+  - {fileID: 58581704}

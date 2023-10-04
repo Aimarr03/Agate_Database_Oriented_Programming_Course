@@ -19,9 +19,9 @@ public class BinaryProgressLevelManager : MonoBehaviour
         LoadData();
     }
 
-    public void Save()
+    public void Save(ProgressLevel _progressLevel)
     {
-        SaveData();
+        SaveData(_progressLevel);
     }
     public ProgressLevel GetPlayerProgressLevel()
     {
@@ -56,11 +56,11 @@ public class BinaryProgressLevelManager : MonoBehaviour
         {
             Directory.CreateDirectory(directoryPath);
             _PlayerProgressLevel.levelPackProgress.Add("Level Pack A", 0);
-            SaveData(); // Create a new save file if it doesn't exist
+            SaveData(_PlayerProgressLevel); // Create a new save file if it doesn't exist
         }
     }
 
-    private void SaveData()
+    private void SaveData(ProgressLevel progressLevel)
     {
         string directoryPath = Path.Combine(Application.persistentDataPath, _dirPath);
         string filePath = Path.Combine(directoryPath, _textFile);
@@ -70,7 +70,7 @@ public class BinaryProgressLevelManager : MonoBehaviour
             BinaryFormatter _binaryFormatter = new BinaryFormatter();
             using (FileStream _dataFile = new FileStream(filePath, FileMode.Create))
             {
-                _binaryFormatter.Serialize(_dataFile, _PlayerProgressLevel);
+                _binaryFormatter.Serialize(_dataFile, progressLevel);
                 Debug.Log("Progress saved");
             }
         }

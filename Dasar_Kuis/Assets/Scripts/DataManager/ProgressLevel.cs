@@ -11,7 +11,7 @@ public class ProgressLevel
     public Dictionary<string, int> levelPackProgress;
     public ProgressLevel()
     {
-        koin = 0;
+        koin = 50;
         levelPackProgress = new Dictionary<string, int>();
     }
 }

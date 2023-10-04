@@ -15,6 +15,7 @@ MonoBehaviour:
   pertanyaan: Warna dari Mawar
   gambarSoal: {fileID: 21300000, guid: 09f5183f8e2da264b95670172b3fd55e, type: 3}
   namaSoal: A-1
+  _DijawabBenar: 0
   jawabanSoal:
   - jawaban: Merah
     nilaiBenar: 1

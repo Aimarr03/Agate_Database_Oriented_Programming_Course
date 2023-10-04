@@ -15,6 +15,7 @@ MonoBehaviour:
   pertanyaan: Warna dari Daun
   gambarSoal: {fileID: 21300000, guid: 914cb41c72f3d504f9e1f3e75bb247b0, type: 3}
   namaSoal: A-3
+  _DijawabBenar: 0
   jawabanSoal:
   - jawaban: Merah
     nilaiBenar: 0

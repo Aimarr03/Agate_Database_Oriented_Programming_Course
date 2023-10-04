@@ -25,7 +25,7 @@ public class LevelPackManager : MonoBehaviour
         foreach(LevelPack levelPack in _ListLevelPack)
         {
             Transform currentLevelpPack = Instantiate(_LevelPackButtonFormat, _LevelPackContainer);
-            currentLevelpPack.gameObject.TryGetComponent<Level_Pack_UI>(out Level_Pack_UI _levelPackUI);
+            Level_Pack_UI _levelPackUI = currentLevelpPack.gameObject.GetComponent<Level_Pack_UI>();
             _levelPackUI._SetLevelPack(levelPack);
             currentLevelpPack.gameObject.SetActive(true);
         }
