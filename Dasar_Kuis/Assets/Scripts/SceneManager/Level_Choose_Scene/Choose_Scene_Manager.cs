@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Choose_Scene_Manager : MonoBehaviour
 {
-    [SerializeField] Level_Pack_UI test;
+    [SerializeField] Level_Pack_UI _Level_Pack_Terpilih;
     [SerializeField] Transform TransactionPanel;
     private Transform suksesPanel;
     private Transform gagalPanel;
@@ -30,8 +30,8 @@ public class Choose_Scene_Manager : MonoBehaviour
 
     private void Level_Pack_UI_OnClickTerkunci(Level_Pack_UI obj)
     {
-        test = obj;
-        int price = test.GetPrice();
+        _Level_Pack_Terpilih = obj;
+        int price = _Level_Pack_Terpilih.GetPrice();
         TransactionPanel.gameObject.SetActive(true);
         if (coinDisplay.CheckMoney(price))
         {
@@ -48,7 +48,7 @@ public class Choose_Scene_Manager : MonoBehaviour
 
     private void Level_Pack_UI_OnClickBeli()
     {
-        test.SetTerkunci(false);
+        _Level_Pack_Terpilih.SetTerkunci(false);
         coinDisplay.UseMoney(hargaKini);
         coinDisplay.UpdateUI();
         TransactionPanel.gameObject.SetActive(false);
@@ -58,9 +58,17 @@ public class Choose_Scene_Manager : MonoBehaviour
     }
     private void Transaksi()
     {
-        test.SetTerkunci(false);
-        coinDisplay.UseMoney(test.GetPrice());
+        _Level_Pack_Terpilih.SetTerkunci(false);
+        coinDisplay.UseMoney(_Level_Pack_Terpilih.GetPrice());
         coinDisplay.UpdateUI();
+        UpdateDataSave();
+    }
+    private void UpdateDataSave()
+    {
+        ProgressLevel progressLevel = BinaryProgressLevelManager.instance.GetPlayerProgressLevel();
+        LevelPack levelPack = _Level_Pack_Terpilih.GetLevelPack();
+        progressLevel._PlayerProgressLevel.Add(new ProgressLevel.DataProgress(levelPack._LevelPackName));
+        BinaryProgressLevelManager.instance.Save(progressLevel);
     }
 
     private void OnDestroy()

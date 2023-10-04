@@ -23,6 +23,7 @@ public class Level_Pack_UI : MonoBehaviour
     {
         _levelPack = currentLevelPack;
         _ButtonText.text = _levelPack.ToString();
+        DisplayTerkunci(_levelPack.terkunci);
     }
     public int GetPrice()
     {

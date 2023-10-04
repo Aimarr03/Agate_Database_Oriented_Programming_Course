@@ -286,6 +286,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac6d112e7e0feb419258eac128f47b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PlayerProgressLevel:
+    koin: 50
+    _PlayerProgressLevel: []
 --- !u!4 &58581704
 Transform:
   m_ObjectHideFlags: 0
@@ -2429,6 +2432,8 @@ MonoBehaviour:
   progressLevelManager: {fileID: 58581703}
   PlayerProgressLevel:
     koin: 0
+    _PlayerProgressLevel: []
+  QnA_manager: {fileID: 2065763512}
   TombolMainMenu: {fileID: 476108050}
   prevButton: {fileID: 1275521948}
   nextButton: {fileID: 1221243327}
@@ -3997,6 +4002,7 @@ MonoBehaviour:
   _gambarPertanyaan: {fileID: 819089606}
   _levelText: {fileID: 1066630433}
   indexPertanyaan: 0
+  indexLevelPack: 0
   dataSoal: {fileID: 11400000, guid: 92f5e93f18629de43853c88771ae6f74, type: 2}
   timeScript: {fileID: 2065763514}
 --- !u!4 &2065763513

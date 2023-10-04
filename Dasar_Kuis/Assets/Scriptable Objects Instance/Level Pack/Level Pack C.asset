@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Level Pack C
   m_EditorClassIdentifier: 
   _LevelPackName: Level Pack C
+  indexLevelPack: 2
   levelPack:
   - {fileID: 11400000, guid: bdbcb1e3b827d174cb945b9421cad725, type: 2}
   - {fileID: 11400000, guid: 47de754d41c523f4a841a1f1bebdcda1, type: 2}

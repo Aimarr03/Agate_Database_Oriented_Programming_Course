@@ -46,9 +46,16 @@ public class LevelManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         QuestionData[] _CurrentQuestionsData = currentLevelPack.levelPack;
+        ProgressLevel levelProgress = BinaryProgressLevelManager.instance.GetPlayerProgressLevel();
+        ProgressLevel.DataProgress _dataProgress= levelProgress._PlayerProgressLevel[_GameplayData.levelPack.indexLevelPack];
+        bool[] _dataPertanyaan = _dataProgress._LevelPackProgress;
         int indexLevel = 0;
         foreach (QuestionData currentQuestion in _CurrentQuestionsData)
         {
+            if (_dataPertanyaan[indexLevel])
+            {
+                currentQuestion._DijawabBenar = true;
+            }
             Transform _CurrentLevelUI = Instantiate(_LevelUIFormat, _LevelContainer);
             _CurrentLevelUI.gameObject.SetActive(true);
             _CurrentLevelUI.gameObject.TryGetComponent<Level_UI>(out Level_UI currentLevelUI);

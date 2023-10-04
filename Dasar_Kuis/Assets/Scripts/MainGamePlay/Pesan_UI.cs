@@ -20,6 +20,7 @@ public class Pesan_UI : MonoBehaviour
 
     [SerializeField] private BinaryProgressLevelManager progressLevelManager;
     [SerializeField] private ProgressLevel PlayerProgressLevel;
+    [SerializeField] private QnA_Manager QnA_manager;
 
     public Button TombolMainMenu;
     public Button prevButton;
@@ -41,10 +42,11 @@ public class Pesan_UI : MonoBehaviour
         PilihanJawaban.gameObject.SetActive(true);
         benar = new(115, 255, 115);
         salah = new(255, 0, 0);
+        PlayerProgressLevel = progressLevelManager.GetPlayerProgressLevel();
     }
     private void Start()
     {
-        PlayerProgressLevel = progressLevelManager.GetPlayerProgressLevel();
+        
     }
 
     private void UI_Pertanyaan_AnswerChosen(UI_Pertanyaan.DataDikirim _DataTerkirim)
@@ -54,6 +56,14 @@ public class Pesan_UI : MonoBehaviour
         if (!_DataTerkirim._QuestionDataReference._DijawabBenar)
         {
             PlayerProgressLevel.koin += 10;
+            int indexLevelPack = QnA_manager.indexLevelPack;
+            int indexPertanyaan = QnA_manager.indexPertanyaan;
+            Debug.Log(indexPertanyaan);
+            Debug.Log(indexLevelPack);
+            Debug.Log(PlayerProgressLevel);
+            Debug.Log(PlayerProgressLevel._PlayerProgressLevel[0]);
+            Debug.Log(PlayerProgressLevel._PlayerProgressLevel[0]._LevelPackProgress[0]);
+            PlayerProgressLevel._PlayerProgressLevel[indexLevelPack]._LevelPackProgress[indexPertanyaan] = true;
             progressLevelManager.Save(PlayerProgressLevel);
             _DataTerkirim._QuestionDataReference._DijawabBenar = true;
         }

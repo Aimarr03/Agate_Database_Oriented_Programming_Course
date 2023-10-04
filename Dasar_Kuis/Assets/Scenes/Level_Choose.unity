@@ -1162,6 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6eb25143fef8394e851450cd2da715c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  progressLevelManager: {fileID: 1111858920}
   _ListLevelPack:
   - {fileID: 11400000, guid: 92f5e93f18629de43853c88771ae6f74, type: 2}
   - {fileID: 11400000, guid: c874acb294d2821458c8e2cb98ec0e1f, type: 2}
@@ -1169,6 +1170,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bf7b5d847a142f24db165619f86c4bd1, type: 2}
   _LevelPackContainer: {fileID: 589210139}
   _LevelPackButtonFormat: {fileID: 647155359}
+  currentProgressLevel:
+    koin: 50
+    _PlayerProgressLevel: []
 --- !u!1 &602375462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1911,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac6d112e7e0feb419258eac128f47b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PlayerProgressLevel:
+    koin: 50
+    _PlayerProgressLevel: []
 --- !u!4 &1111858921
 Transform:
   m_ObjectHideFlags: 0
@@ -1948,7 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c2e36e86b207646a5e07b3eaf72bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 0}
+  _Level_Pack_Terpilih: {fileID: 0}
   TransactionPanel: {fileID: 918365342}
   coinDisplay: {fileID: 1111858922}
 --- !u!1 &1205834299

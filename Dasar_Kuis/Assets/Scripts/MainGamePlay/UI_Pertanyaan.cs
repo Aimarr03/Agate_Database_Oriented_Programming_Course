@@ -8,6 +8,7 @@ public class UI_Pertanyaan : MonoBehaviour
 {
     public static event System.Action<DataDikirim> AnswerChosen;
     private string _jawaban;
+    private int indexPertanyaan;
     [SerializeField] private TextMeshProUGUI kontenJawaban;
     private QuestionData _CurrentQuestionData;
     private bool _nilaiBenar;

@@ -18,15 +18,17 @@ public class QnA_Manager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _levelText;
     //Untuk merekam sedang melakukan pertanyaan keberapa
     public int indexPertanyaan;
+    public int indexLevelPack;
 
     //Untuk membuat struktur data untuk memuat format soal
-    [SerializeField] private LevelPack dataSoal;
+    public LevelPack dataSoal;
     //[SerializeField] private ProgressLevel playerProgress;
     [SerializeField] private TimerScript timeScript;
 
-    public void Awake()
+    public void Start()
     {
         dataSoal = gameplayData.levelPack;
+        indexLevelPack = dataSoal.indexLevelPack;
         indexPertanyaan = gameplayData.IndexLevel;
         CheckSoal();
         LoadSoal();

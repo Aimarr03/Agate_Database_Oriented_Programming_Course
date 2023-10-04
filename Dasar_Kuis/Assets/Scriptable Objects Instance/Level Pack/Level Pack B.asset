@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Level Pack B
   m_EditorClassIdentifier: 
   _LevelPackName: Level Pack B
+  indexLevelPack: 1
   levelPack:
   - {fileID: 11400000, guid: 29732fb3c849615459256de4aa941c4b, type: 2}
   - {fileID: 11400000, guid: f47b0818026348a42a5191442cd0b2fa, type: 2}
   - {fileID: 11400000, guid: c5ac6cce23c52b441ab6d3fdaa054029, type: 2}
   - {fileID: 11400000, guid: 0504bf55c2871d8419408404d4de2ade, type: 2}
   - {fileID: 11400000, guid: f39ec49fce41534459225dcf2dd89788, type: 2}
-  terkunci: 1
+  terkunci: 0
   harga: 50

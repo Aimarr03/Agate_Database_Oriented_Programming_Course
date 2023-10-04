@@ -7,10 +7,12 @@ public class BinaryProgressLevelManager : MonoBehaviour
     private string _dirPath = "Data Progress Level";
     private string _textFile = "PlayerCurrentProgress.sav";
 
-    private ProgressLevel _PlayerProgressLevel = new ProgressLevel();
+    public ProgressLevel _PlayerProgressLevel = new ProgressLevel();
+    public static BinaryProgressLevelManager instance;
 
     private void Awake()
     {
+        instance = this;
         Load();
     }
 
@@ -55,7 +57,7 @@ public class BinaryProgressLevelManager : MonoBehaviour
         else
         {
             Directory.CreateDirectory(directoryPath);
-            _PlayerProgressLevel.levelPackProgress.Add("Level Pack A", 0);
+            _PlayerProgressLevel._PlayerProgressLevel.Add(new ProgressLevel.DataProgress("Level Pack A"));
             SaveData(_PlayerProgressLevel); // Create a new save file if it doesn't exist
         }
     }
