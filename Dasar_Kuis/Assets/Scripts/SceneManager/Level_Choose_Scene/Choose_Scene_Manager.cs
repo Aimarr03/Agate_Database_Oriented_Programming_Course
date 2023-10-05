@@ -51,7 +51,7 @@ public class Choose_Scene_Manager : MonoBehaviour
         _Level_Pack_Terpilih.SetTerkunci(false);
         coinDisplay.UseMoney(hargaKini);
         coinDisplay.UpdateUI();
-        TransactionPanel.gameObject.SetActive(false);
+        //TransactionPanel.gameObject.SetActive(false);
         suksesPanel.gameObject.SetActive(false);
         gagalPanel.gameObject.SetActive(false);
         Transaksi();

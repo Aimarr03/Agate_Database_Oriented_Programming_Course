@@ -35,7 +35,7 @@ public class LevelManager : MonoBehaviour
     private void Level_Pack_UI_OnClick(LevelPack currentLevelPack)
     {
         _GameplayData.levelPack = currentLevelPack;
-        _LevelPackContainer.gameObject.SetActive(false);
+        //_LevelPackContainer.gameObject.SetActive(false);
         gameObject.SetActive(true);
         LevelBackButton.gameObject.SetActive(true);
         Headline.text = _HeadLineText_Level;
@@ -66,9 +66,9 @@ public class LevelManager : MonoBehaviour
 
     public void BackButton()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         LevelBackButton.gameObject.SetActive(false);
-        _LevelPackContainer.gameObject.SetActive(true);
+        //_LevelPackContainer.gameObject.SetActive(true);
         Headline.text = _HeadLineText_LevelPack;
     }
 
@@ -76,7 +76,7 @@ public class LevelManager : MonoBehaviour
     public void SetLevel(Level_Pack_UI levelPackUI)
     {
         LevelPack levelPack = levelPackUI.GetLevelPack();
-        _LevelPackContainer.gameObject.SetActive(false);
+        //_LevelPackContainer.gameObject.SetActive(false);
         gameObject.SetActive(true);
         LevelBackButton.gameObject.SetActive(true);
         Headline.text = _HeadLineText_Level;
