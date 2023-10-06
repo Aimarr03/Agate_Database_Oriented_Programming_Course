@@ -41,11 +41,13 @@ public class Level_Pack_UI : MonoBehaviour
         {
             OnClickTerbuka?.Invoke(_levelPack);
             choiceAnimator.SetBoolLevelChoice(true);
+            Audio_Manager.instance.TriggerSFX(0);
         }
         else
         {
             PurchaseButton.onClick.RemoveAllListeners();
             PurchaseButton.onClick.AddListener(Membeli);
+            Audio_Manager.instance.TriggerSFX(0);
             OnClickTerkunci?.Invoke(this);
             choiceAnimator.SetBoolPanelBuy(true);
         }

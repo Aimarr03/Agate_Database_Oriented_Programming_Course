@@ -32,6 +32,7 @@ public class TimerScript : MonoBehaviour
         {
             string pesan = "Waktu Habis, anda tidak menjawab apa pun!";
             TimeOver?.Invoke(pesan);
+            Audio_Manager.instance.TriggerSFX(4);
             //Pesan_UI.instance.TampilPesan(pesan);
             //Pesan_UI.instance.Salah();
         }

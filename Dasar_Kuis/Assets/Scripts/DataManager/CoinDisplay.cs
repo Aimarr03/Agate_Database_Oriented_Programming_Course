@@ -23,6 +23,8 @@ public class CoinDisplay : MonoBehaviour
         if(CheckMoney(money))
         {
             progressLevel.koin -= money;
+            Audio_Manager.instance.TriggerSFX(4);
+            progressLevelManager.Save(progressLevel);
         }
     }
     public void UpdateUI()

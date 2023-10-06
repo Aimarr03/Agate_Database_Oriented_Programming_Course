@@ -14,6 +14,7 @@ public class Choose_Scene_Manager : MonoBehaviour
     private int hargaKini;
     void Awake()
     {
+        Audio_Manager.instance.ChangeMusic(0);
         _suksesTransaksi = "Sukses";
         _gagalTransaksi = "Gagal";
 
@@ -27,7 +28,11 @@ public class Choose_Scene_Manager : MonoBehaviour
         Level_Pack_UI.OnClickTerkunci += Level_Pack_UI_OnClickTerkunci;
         Level_Pack_UI.OnClickBeli += Level_Pack_UI_OnClickBeli;
     }
-
+    public void OnDestroy()
+    {
+        Level_Pack_UI.OnClickTerkunci -= Level_Pack_UI_OnClickTerkunci;
+        Level_Pack_UI.OnClickBeli -= Level_Pack_UI_OnClickBeli;
+    }
     private void Level_Pack_UI_OnClickTerkunci(Level_Pack_UI obj)
     {
         _Level_Pack_Terpilih = obj;
@@ -35,12 +40,14 @@ public class Choose_Scene_Manager : MonoBehaviour
         TransactionPanel.gameObject.SetActive(true);
         if (coinDisplay.CheckMoney(price))
         {
+            Audio_Manager.instance.TriggerSFX(3);
             suksesPanel.gameObject.SetActive(true);
             gagalPanel.gameObject.SetActive(false);
             hargaKini = price;
         }
         else
         {
+            Audio_Manager.instance.TriggerSFX(4);
             suksesPanel.gameObject.SetActive(false);
             gagalPanel.gameObject.SetActive(true);
         }
@@ -71,10 +78,6 @@ public class Choose_Scene_Manager : MonoBehaviour
         BinaryProgressLevelManager.instance.Save(progressLevel);
     }
 
-    private void OnDestroy()
-    {
-        Level_Pack_UI.OnClickTerkunci -= Level_Pack_UI_OnClickTerkunci;
-    }
     public void Kembali()
     {
         TransactionPanel.gameObject.SetActive(false);

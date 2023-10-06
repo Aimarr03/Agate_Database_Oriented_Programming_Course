@@ -25,6 +25,10 @@ public class QnA_Manager : MonoBehaviour
     //[SerializeField] private ProgressLevel playerProgress;
     [SerializeField] private TimerScript timeScript;
 
+    public void Awake()
+    {
+        Audio_Manager.instance.ChangeMusic(1);
+    }
     public void Start()
     {
         dataSoal = gameplayData.levelPack;
@@ -43,6 +47,7 @@ public class QnA_Manager : MonoBehaviour
             CheckSoal();
             timeScript.resetTime();
         }
+        Audio_Manager.instance.TriggerSFX(0);
     }
     public void prevSoal()
     {
@@ -54,6 +59,7 @@ public class QnA_Manager : MonoBehaviour
             LoadSoal();
             timeScript.resetTime();
         }
+        Audio_Manager.instance.TriggerSFX(0);
     }
     public void LoadSoal()
     {

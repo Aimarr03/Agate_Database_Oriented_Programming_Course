@@ -21,6 +21,6 @@ public class Level_UI : MonoBehaviour
     {
         _levelManager._GameplayData.IndexLevel = _indexLevel;
         OnClick?.Invoke(_levelManager._GameplayData);
-        
+        Audio_Manager.instance.TriggerSFX(0);
     }
 }

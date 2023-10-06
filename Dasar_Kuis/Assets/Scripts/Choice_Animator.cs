@@ -13,7 +13,10 @@ public class Choice_Animator : MonoBehaviour
     {
         Level_Pack_UI.OnClickTerkunci += Level_Pack_UI_OnClickTerkunci;
     }
-
+    public void OnDestroy()
+    {
+        Level_Pack_UI.OnClickTerkunci -= Level_Pack_UI_OnClickTerkunci;
+    }
     private void Level_Pack_UI_OnClickTerkunci(Level_Pack_UI obj)
     {
         SetBoolPanelBuy(true);

@@ -23,6 +23,14 @@ public class UI_Pertanyaan : MonoBehaviour
     {
         string nilaiJawaban = _nilaiBenar ? "benar" : "salah";
         string pesan = "Jawaban Anda adalah " + _jawaban + " \njawaban ini " + nilaiJawaban;
+        if (_nilaiBenar)
+        {
+            Audio_Manager.instance.TriggerSFX(1);
+        }
+        else
+        {
+            Audio_Manager.instance.TriggerSFX(2);
+        }
         AnswerChosen?.Invoke(new DataDikirim
         {
             pesan = pesan,

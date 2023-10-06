@@ -1542,6 +1542,7 @@ GameObject:
   - component: {fileID: 767198352}
   - component: {fileID: 767198351}
   - component: {fileID: 767198350}
+  - component: {fileID: 767198353}
   m_Layer: 5
   m_Name: Back_Button
   m_TagString: Untagged
@@ -1637,6 +1638,18 @@ MonoBehaviour:
           m_StringArgument: Transition
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 767198353}
+        m_TargetAssemblyTypeName: Audio_Trigger, Assembly-CSharp
+        m_MethodName: TriggerSFX
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &767198351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,6 +1688,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767198348}
   m_CullTransparentMesh: 1
+--- !u!114 &767198353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767198348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6519017a5016147b621e56d865af45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &810686638 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 886560883167751263, guid: 9ee90543073c2b24f84ed32f04cf21ec, type: 3}
@@ -2003,6 +2028,7 @@ GameObject:
   - component: {fileID: 951595351}
   - component: {fileID: 951595350}
   - component: {fileID: 951595349}
+  - component: {fileID: 951595353}
   m_Layer: 5
   m_Name: Back_Button_Level
   m_TagString: Untagged
@@ -2078,6 +2104,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 951595353}
+        m_TargetAssemblyTypeName: Audio_Trigger, Assembly-CSharp
+        m_MethodName: TriggerSFX
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &951595350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2136,6 +2174,18 @@ RectTransform:
   m_AnchoredPosition: {x: 109.8, y: 0}
   m_SizeDelta: {x: 180, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &951595353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951595348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6519017a5016147b621e56d865af45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1111858919
 GameObject:
   m_ObjectHideFlags: 0
