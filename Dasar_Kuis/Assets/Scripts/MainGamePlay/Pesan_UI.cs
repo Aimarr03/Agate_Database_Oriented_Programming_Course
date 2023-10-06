@@ -38,17 +38,12 @@ public class Pesan_UI : MonoBehaviour
         TimerScript.TimeOver += TimerScript_TimeOver;
 
         sudahJawab = false;
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
         PilihanJawaban.gameObject.SetActive(true);
         benar = new(115, 255, 115);
         salah = new(255, 0, 0);
         PlayerProgressLevel = progressLevelManager.GetPlayerProgressLevel();
     }
-    private void Start()
-    {
-        
-    }
-
     private void UI_Pertanyaan_AnswerChosen(UI_Pertanyaan.DataDikirim _DataTerkirim)
     {
         TampilPesan(_DataTerkirim.pesan);
@@ -93,7 +88,6 @@ public class Pesan_UI : MonoBehaviour
     {
         sudahJawab = false;
         PilihanJawaban.gameObject.SetActive(true);
-        gameObject.SetActive(false);
     }
     public void CheckKebenaran(bool kebenaranNilai)
     {

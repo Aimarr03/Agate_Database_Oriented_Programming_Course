@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class Level_Pack_UI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _HargaLevelPack;
     [SerializeField] private Transform PanelTerkunci;
     [SerializeField] private Button PurchaseButton;
+    [SerializeField] private Choice_Animator choiceAnimator;
     public void Start()
     {
         _HargaLevelPack.text = _levelPack.harga.ToString();
@@ -36,12 +38,16 @@ public class Level_Pack_UI : MonoBehaviour
     public void LevelPackUI_OnClick()
     {
         if (!_levelPack.terkunci)
+        {
             OnClickTerbuka?.Invoke(_levelPack);
+            choiceAnimator.SetBoolLevelChoice(true);
+        }
         else
         {
             PurchaseButton.onClick.RemoveAllListeners();
             PurchaseButton.onClick.AddListener(Membeli);
             OnClickTerkunci?.Invoke(this);
+            choiceAnimator.SetBoolPanelBuy(true);
         }
     }
     public void Membeli()
